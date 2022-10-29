@@ -1,7 +1,6 @@
 [package]
 name = "practice-rust"
 version = "0.1.0"
-author = "Yairma"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
@@ -12,6 +11,4 @@ qrcode = "0.12.0"
 image = "0.24.0"
 clap = { version = "4.0.18", features = ["derive"] }
 anyhow = "1"
-
-[workspace]
-name = "practice-rust"
+url = "2.3.1"
