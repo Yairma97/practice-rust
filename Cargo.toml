@@ -8,7 +8,12 @@ edition = "2021"
 [dependencies]
 headless_chrome = "0.9.0"
 qrcode = "0.12.0"
-image = "0.24.0"
+image = "0.23.0"
 clap = { version = "4.0.18", features = ["derive"] }
 anyhow = "1"
 url = "2.3.1"
+deno_core = "0.156.0"
+tokio = {version = "1.21.2",features=["full"]}
+
+[[example]]
+name = "deno"
