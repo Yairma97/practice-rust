@@ -10,7 +10,7 @@ use web2image::web2image;
 #[command(author = "Yair. M <ma672832006@gmail.com>")]
 #[command(version = "1.0")]
 struct Cli {
-    #[arg(short,long,default_value = "resource/snapshot.jpg",value_parser = valid_filename)]
+    #[arg(short,long,default_value = "web2image/resource/snapshot.jpg",value_parser = valid_filename)]
     output: String,
     #[arg(long,value_parser = valid_url)]
     url: String,
