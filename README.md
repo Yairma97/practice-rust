@@ -1,0 +1,1 @@
+windows PowerShell 设置环境变量: $env:RUST_LOG="info";

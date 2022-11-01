@@ -2,13 +2,13 @@ mod pb;
 
 use std::sync::Arc;
 
+use anyhow::Result;
 use dashmap::DashMap;
-use pb::*;
-use prost::Message;
-use tokio::net::{TcpListener,TcpStream};
+use futures::{SinkExt, StreamExt};
+use pb::{request::*, *};
+use tokio::net::TcpListener;
 use tokio_util::codec::LengthDelimitedCodec;
 use tracing::info;
-use futures::StreamExt;
 
 #[derive(Debug)]
 struct ServerState {
@@ -33,7 +33,7 @@ async fn main() -> Result<()> {
         .with_env_filter(tracing_subscriber::EnvFilter::from_default_env())
         .init();
 
-    info!("Starting");
+    info!("Server Starting");
 
     let state = Arc::new(ServerState::new());
     let addr = "127.0.0.1:8888";
@@ -43,14 +43,30 @@ async fn main() -> Result<()> {
     loop {
         let (stream, addr) = listener.accept().await?;
         info!("New client: {:?} accepted", addr);
+        let shared = state.clone();
         tokio::spawn(async move {
             let mut stream = LengthDelimitedCodec::builder()
                 .length_field_length(2)
                 .new_framed(stream);
-            while let Some(Ok(buf)) = stream.next().await? {
-                todo!()
+            while let Some(Ok(buf)) = stream.next().await {
+                let msg: Request = buf.try_into()?;
+                info!("Got a command from {:?}", msg);
+
+                let response: Response = match msg.command {
+                    Some(Command::Get(RequestGet { key })) => 
+                    match shared.store.get(&key) {
+                        Some(v) => Response::new(key, v.value().to_vec()),
+                        None => Response::not_found(key),
+                    },
+                    Some(Command::Put(RequestPut { key, value })) => {
+                        shared.store.insert(key.clone(), value.clone());
+                        Response::new(key, value)
+                    }
+                    None => unimplemented!(),
+                };
+                stream.send(response.into()).await?;
             }
-        })
+            Ok::<(), anyhow::Error>(())
+        });
     }
-    Ok(())
 }
