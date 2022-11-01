@@ -53,14 +53,22 @@ async fn main() -> Result<()> {
                 info!("Got a command from {:?}", msg);
 
                 let response: Response = match msg.command {
-                    Some(Command::Get(RequestGet { key })) => 
-                    match shared.store.get(&key) {
+                    Some(Command::Get(RequestGet { key })) => match shared.store.get(&key) {
                         Some(v) => Response::new(key, v.value().to_vec()),
                         None => Response::not_found(key),
                     },
                     Some(Command::Put(RequestPut { key, value })) => {
                         shared.store.insert(key.clone(), value.clone());
                         Response::new(key, value)
+                    }
+                    Some(Command::Del(RequestDel { key })) => 
+                        match shared.store.contains_key(&key){
+                            true => {
+                                shared.store.remove(&key);
+                                info!("{} has been deleted", &key);
+                                Response::del_key(key)
+                            },
+                            false => Response::not_found(key),
                     }
                     None => unimplemented!(),
                 };

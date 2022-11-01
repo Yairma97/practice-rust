@@ -5,7 +5,8 @@ package abi;
 message Request{
     oneof command{
         RequestGet get = 1;
-        RequestPut Put = 2;
+        RequestPut put = 2;
+        RequestDel del = 3;
     }
 }
 
@@ -22,4 +23,8 @@ message RequestGet{
 message RequestPut{
     string key = 1;
     bytes value = 2;
+}
+
+message RequestDel{
+    string key = 1;
 }

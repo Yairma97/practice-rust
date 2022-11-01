@@ -1,5 +1,7 @@
 mod abi;
 
+use std::format;
+
 pub use abi::*;
 use bytes::{Bytes, BytesMut};
 use prost::Message;
@@ -29,6 +31,14 @@ impl Request {
             })),
         }
     }
+
+    pub fn key_del(key: &str) -> Self {
+        Self {
+            command: Some(Command::Del(RequestDel {
+                key: key.to_owned(),
+            })),
+        }
+    }
 }
 
 impl From<Request> for Bytes {
@@ -52,6 +62,13 @@ impl Response {
             code: 404,
             key,
             ..Default::default()
+        }
+    }
+    pub fn del_key(key: String) -> Self {
+        Self {
+            code: 200,
+            key: key.clone(),
+            value: format!("remove {} success", key).as_bytes().to_vec(),
         }
     }
 }
