@@ -330,7 +330,6 @@ dependencies = [
 ]
 
 [[package]]
-<<<<<<< HEAD
 name = "brotli"
 version = "3.3.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -352,8 +351,6 @@ dependencies = [
 ]
 
 [[package]]
-=======
->>>>>>> 89dd902d696992d0daaba57d527d06ef45cb0f39
 name = "bumpalo"
 version = "3.11.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -488,7 +485,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3d7b894f5411737b7867f4827955924d7c254fc9f4d91a6aad6b097804b1018b"
 
 [[package]]
-<<<<<<< HEAD
+name = "colored"
+version = "2.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b3616f750b84d8f0de8a58bda93e08e2a81ad3f523089b05f1dffecab48c6cbd"
+dependencies = [
+ "atty",
+ "lazy_static",
+ "winapi",
+]
+
+[[package]]
 name = "console_error_panic_hook"
 version = "0.1.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -505,19 +512,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fbdcdcb6d86f71c5e97409ad45898af11cbc995b4ee8112d59095a28d376c935"
 
 [[package]]
-=======
-name = "colored"
-version = "2.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b3616f750b84d8f0de8a58bda93e08e2a81ad3f523089b05f1dffecab48c6cbd"
-dependencies = [
- "atty",
- "lazy_static",
- "winapi",
-]
-
-[[package]]
->>>>>>> 89dd902d696992d0daaba57d527d06ef45cb0f39
 name = "constant_time_eq"
 version = "0.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -824,11 +818,7 @@ version = "0.8.31"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9852635589dc9f9ea1b6fe9f05b50ef208c85c834a562f0c6abb1c475736ec2b"
 dependencies = [
-<<<<<<< HEAD
  "cfg-if 1.0.0",
-=======
- "cfg-if",
->>>>>>> 89dd902d696992d0daaba57d527d06ef45cb0f39
 ]
 
 [[package]]
@@ -1422,12 +1412,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "ipnet"
-version = "2.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "879d54834c8c76457ef4293a689b2a8c59b076067ad77b15efafbb05f92a592b"
-
-[[package]]
 name = "itertools"
 version = "0.10.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1461,8 +1445,6 @@ dependencies = [
 ]
 
 [[package]]
-<<<<<<< HEAD
-=======
 name = "jsonxf"
 version = "1.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1473,7 +1455,6 @@ dependencies = [
 ]
 
 [[package]]
->>>>>>> 89dd902d696992d0daaba57d527d06ef45cb0f39
 name = "kv"
 version = "0.1.0"
 dependencies = [
@@ -1670,7 +1651,6 @@ dependencies = [
 ]
 
 [[package]]
-<<<<<<< HEAD
 name = "node-sys"
 version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1684,8 +1664,6 @@ dependencies = [
 ]
 
 [[package]]
-=======
->>>>>>> 89dd902d696992d0daaba57d527d06ef45cb0f39
 name = "nu-ansi-term"
 version = "0.46.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1820,11 +1798,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "12fc0523e3bd51a692c8850d075d74dc062ccf251c0110668cbd921917118a13"
 dependencies = [
  "bitflags",
-<<<<<<< HEAD
  "cfg-if 1.0.0",
-=======
- "cfg-if",
->>>>>>> 89dd902d696992d0daaba57d527d06ef45cb0f39
  "foreign-types",
  "libc",
  "once_cell",
@@ -2590,7 +2564,6 @@ dependencies = [
 ]
 
 [[package]]
-<<<<<<< HEAD
 name = "rulinalg"
 version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2601,8 +2574,6 @@ dependencies = [
 ]
 
 [[package]]
-=======
->>>>>>> 89dd902d696992d0daaba57d527d06ef45cb0f39
 name = "rustc-demangle"
 version = "0.1.21"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3571,11 +3542,7 @@ version = "0.2.83"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "eaf9f5aceeec8be17c128b2e93e031fb8a4d469bb9c4ae2d7dc1888b26887268"
 dependencies = [
-<<<<<<< HEAD
  "cfg-if 1.0.0",
-=======
- "cfg-if",
->>>>>>> 89dd902d696992d0daaba57d527d06ef45cb0f39
  "wasm-bindgen-macro",
 ]
 
@@ -3600,11 +3567,7 @@ version = "0.4.33"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "23639446165ca5a5de86ae1d8896b737ae80319560fbaa4c2887b7da6e7ebd7d"
 dependencies = [
-<<<<<<< HEAD
  "cfg-if 1.0.0",
-=======
- "cfg-if",
->>>>>>> 89dd902d696992d0daaba57d527d06ef45cb0f39
  "js-sys",
  "wasm-bindgen",
  "web-sys",
