@@ -4,4 +4,8 @@ members = [
     "web2image",
     "deno-practice",
     "pow",
+<<<<<<< HEAD
     "imagespec"]
+=======
+    "httpie"]
+>>>>>>> 89dd902d696992d0daaba57d527d06ef45cb0f39
