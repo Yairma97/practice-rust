@@ -1,29 +1,29 @@
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Block {
-    #[prost(bytes="vec", tag="1")]
+    #[prost(bytes = "vec", tag = "1")]
     pub data: ::prost::alloc::vec::Vec<u8>,
-    #[prost(bytes="vec", tag="2")]
+    #[prost(bytes = "vec", tag = "2")]
     pub hash: ::prost::alloc::vec::Vec<u8>,
-    #[prost(uint32, tag="3")]
+    #[prost(uint32, tag = "3")]
     pub nonce: u32,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BlockStatus {
-    #[prost(uint32, tag="1")]
+    #[prost(uint32, tag = "1")]
     pub code: u32,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ClientInfo {
-    #[prost(string, tag="1")]
+    #[prost(string, tag = "1")]
     pub name: ::prost::alloc::string::String,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BlockHash {
-    #[prost(bytes="vec", tag="1")]
+    #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
-    #[prost(bytes="vec", tag="2")]
+    #[prost(bytes = "vec", tag = "2")]
     pub hash: ::prost::alloc::vec::Vec<u8>,
-    #[prost(uint32, tag="3")]
+    #[prost(uint32, tag = "3")]
     pub nonce: u32,
 }
 /// Generated client implementations.

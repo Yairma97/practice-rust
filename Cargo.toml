@@ -3,4 +3,5 @@ members = [
     "kv",
     "web2image",
     "deno-practice",
-    "pow"]
+    "pow",
+    "imagespec"]
